@@ -2,24 +2,18 @@ package com.cuid.gigabytedevelopersinc.ckshuffler;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.ChangeBounds;
-import android.transition.TransitionManager;
-import android.util.Log;
-import android.view.LayoutInflater;
+import com.transitionseverywhere.ChangeBounds;
+import com.transitionseverywhere.ChangeBounds;
+import com.transitionseverywhere.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-
+import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
+
 
 public class MainActivity extends AppCompatActivity {
     private Button btnForCreate;
@@ -27,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout listLayout;
     private Button btnDisplay;
     private Button btnShuffleTxt;
+    private Button btnGroupTxt;
     static int length;
     static int i;
     EditText[] editTextCollection;
     EditText editText;
+    TextView txtForNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         listLayout = (LinearLayout) findViewById(R.id.listLayout);
         btnDisplay = (Button) findViewById(R.id.btnDisplay);
         btnShuffleTxt = (Button) findViewById(R.id.btnShuffleTxt);
+        btnGroupTxt = (Button)findViewById(R.id.btnGroupTxt);
+//        txtForNumber =(TextView)findViewById(R.id.txtForNumbers);
+
+
+
+
+
 
 
         editTextForInputToCreate.animate().translationX(-1000f);
@@ -81,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
                     editText = new EditText(MainActivity.this);
                     editText.setId(i + 1);
                     editText.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                    editText.setText("Input" + " " + (i + 1));
+                    editText.setHint("Input" + " " + (i + 1));
+                    editText.setInputType(2);
+//                    txtForNumber.setText(i);
                     listLayout.addView(editText);
                     editTextCollection[i] = editText;
                 }
@@ -91,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
 
         btnShuffleTxt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,14 +110,23 @@ public class MainActivity extends AppCompatActivity {
                     inputList.add(gottenText);
 
                 }
+                com.transitionseverywhere.TransitionManager.beginDelayedTransition(listLayout, new ChangeBounds());
                 Collections.shuffle(inputList);
-                System.out.println(inputList);
                 createViews(listLayout,inputList);
 
             }
 
 
         });
+
+        btnGroupTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
 
 
     }
@@ -123,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
             EditText editText1 =  new EditText(MainActivity.this);
             editText1.setText(title);
             editText1.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            editText1.setInputType(2);
+            com.transitionseverywhere.TransitionManager.setTransitionName(editText1,title);
             layout.addView(editText1);
         }
 
