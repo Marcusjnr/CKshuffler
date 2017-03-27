@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">CKshuffler</string>
     <string name="input_number_of_textboxes">Input number of Textboxes</string>
+    <string name="how_manu_groups_do_you_want_ck">How manu groups do you want CK</string>
+    <string name="group_number_here">Group Number Here</string>
 </resources>

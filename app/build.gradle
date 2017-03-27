@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.cuid.gigabytedevelopersinc.ckshuffler"
         minSdkVersion 19
@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -25,7 +25,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
-    compile "com.andkulikov:transitionseverywhere:1.7.0"
-    compile 'hanks.xyz:htextview-library:0.1.5'
+    compile 'cn.pedant.sweetalert:library:1.3'
     testCompile 'junit:junit:4.12'
 }

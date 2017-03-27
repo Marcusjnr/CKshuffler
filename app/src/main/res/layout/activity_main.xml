@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cuid.gigabytedevelopersinc.ckshuffler.MainActivity">
+    tools:context="com.cuid.gigabytedevelopersinc.ckshuffler.MainActivity"
+    android:background="#242424">
 
 
 
@@ -17,7 +18,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/textForInputToCreate"
         android:hint="@string/input_number_of_textboxes"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"/>
 
 
 
@@ -42,28 +45,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create"
-                android:id="@+id/btnCreateTxt"/>
+                android:id="@+id/btnCreateTxt"
+                android:layout_marginStart="15dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Display"
                 android:id="@+id/btnDisplay"
-                android:layout_toRightOf="@+id/btnCreateTxt"/>
+                android:layout_below="@+id/btnCreateTxt"
+                android:layout_marginStart="13dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Shuffle"
                 android:id="@+id/btnShuffleTxt"
-                android:layout_toRightOf="@+id/btnDisplay"/>
+                android:layout_toRightOf="@+id/btnDisplay"
+                android:layout_marginStart="126dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Group"
                 android:id="@+id/btnGroupTxt"
-                android:layout_toRightOf="@+id/btnShuffleTxt"/>
+                android:layout_below="@+id/btnShuffleTxt"
+                android:layout_marginStart="225dp"/>
 
         </RelativeLayout>
 
@@ -71,12 +78,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
        android:layout_below="@+id/scrollForButtons">
 
   <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp">
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -87,7 +95,7 @@
 
       <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+          android:layout_height="match_parent"
           android:id="@+id/listLayout"
           android:orientation="vertical">
 
